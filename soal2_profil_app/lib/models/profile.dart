@@ -1,4 +1,4 @@
-class Profile {
+class Profile { //.
   final String nama;
   final String nim;
   final String prodi;
