@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,12 +16,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.light;
 
-  void _toggleTheme(bool isDark) {
-    setState(() {
-      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,10 +23,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.indigo,
-          brightness: Brightness.light,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
@@ -40,10 +33,12 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       themeMode: _themeMode,
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Inisialisasi Proyek')),
-        body: const Center(child: Text('Setup Tema Berhasil')),
-      ),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/profile': (context) =>
+            const Scaffold(body: Center(child: Text('Halaman Profil'))),
+      },
     );
   }
 }
