@@ -1,103 +1,146 @@
-# UTS Pemrograman Mobile Lanjutan — Aplikasi Profil Mahasiswa
+# UTS Pemrograman Mobile Lanjutan – uts-pml-1124160009
 
-Repository ini berisi hasil pengerjaan Ujian Tengah Semester (UTS) mata kuliah **Pemrograman Mobile Lanjutan** menggunakan framework **Flutter**.
+Repository ini berisi hasil Ujian Tengah Semester (UTS) mata kuliah **Pemrograman Mobile Lanjutan** (Flutter), Semester Ganjil TA 2026–2027.
 
----
+## Identitas
 
-## Identitas Mahasiswa
-
-| Keterangan | Detail |
-| :--- | :--- |
-| **Nama Lengkap** | `Muhammad Aditya Saputra` |
-| **NIM** | `1124160009` |
-| **Kelas** | `TI 2 P SE-3` |
+| | |
+|---|---|
+| **Nama** | Muhammad Aditya Saputra |
+| **NIM** | 1124160009 |
 | **Program Studi** | Teknik Informatika |
-| **Mata Kuliah** | Aplikasi Mobile |
-| **Dosen Pengampu** | I Ketut Gunawan, S.Kom., M.T |
-| **Institusi** | Institut Teknologi & Bisnis Bina Sarana Global |
+| **Kelas** | TI Semester 5 |
+| **Dosen** | I Ketut Gunawan, S.Kom., M.T |
+| **GitHub** | [TYASAP-dev](https://github.com/TYASAP-dev) |
 
----
+## Video Presentasi
 
-## Tautan Penting
-
-* **Video Presentasi YouTube:** `yutub`
-  *(Judul Video: `UTS PML - Aplikasi Profil - Muhammad Aditya Saputra - 1124160009`)*
-* **Unduh File APK (`v1.0.0`):** [GitHub Releases v1.0.0](https://github.com/TYASAP-dev/uts-pml-1124160009/releases/tag/v1.0.0)
-
----
+▶️ **[UTS PML – Aplikasi Profil – Muhammad Aditya Saputra – 1124160009](GANTI_DENGAN_LINK_YOUTUBE)**
 
 ## Struktur Repository
 
-```text
+```
 uts-pml-1124160009/
-├── soal1-live-coding/      # Proyek Flutter Soal 1 (Halaman Profil StatelessWidget)
-├── soal2-profil-app/       # Proyek Flutter Soal 2 (Aplikasi Android Profil Lengkap)
-├── screenshots/            # Folder penyimpanan gambar tangkapan layar aplikasi
-└── README.md               # Dokumentasi utama repository
+├── soal1-live-coding/          # Soal 1 – Live Coding (StatelessWidget)
+│   └── lib/
+│       ├── main.dart
+│       └── profilepage.dart
+├── soal2-profil-app/
+│   └── soal2uts/               # Soal 2 – Proyek Flutter Aplikasi Profil
+│       ├── assets/images/profile.jpg
+│       └── lib/ (main, models, screens, widgets)
+├── screenshots/                # Screenshot aplikasi Soal 2
+└── README.md
 ```
 
 ---
 
-## Daftar Fitur Aplikasi
+## Soal 1 – Live Coding: Halaman Profil Mahasiswa
 
-### 1. Soal 1 — Live Coding (`soal1-live-coding`)
-* Implementasi penuh menggunakan `StatelessWidget` tanpa `StatefulWidget` maupun `setState()`.
-* Konfigurasi `MaterialApp` dengan Material 3 (`useMaterial3: true`), `ColorScheme.fromSeed`, serta dukungan `darkTheme` otomatis mengikuti sistem (`ThemeMode.system`).
-* Layout profil responsif dengan `SafeArea`, `SingleChildScrollView`, `CircleAvatar`, serta widget reusable `InfoTile` untuk informasi kontak dan keahlian/hobi.
-* Interaksi `FloatingActionButton` yang menampilkan `SnackBar`.
+Halaman profil statis (tanpa login) yang dikerjakan **hanya dengan `StatelessWidget`** (tanpa `StatefulWidget` dan `setState()`), dikerjakan dalam 3 tahap commit.
 
-### 2. Soal 2 — Proyek Aplikasi Android (`soal2-profil-app`)
-* **Halaman Login (`login_page.dart`):** Validasi input email dan password menggunakan `Form` + `validator`, indikator loading asynchronous, serta perpindahan halaman menggunakan `Navigator.pushReplacementNamed`.
-* **Halaman Profil Utama (`profile_page.dart`):** Menampilkan foto profil lokal dari `assets/images/`, nama lengkap, NIM, program studi, kelas, bio singkat, serta daftar kontak menggunakan `Card` dan widget reusable `InfoTile`.
-* **Navigasi & Scaffold Lengkap:** Dilengkapi `AppBar`, `Drawer`, `BottomNavigationBar`, dan `FloatingActionButton`.
-* **Halaman Edit Profil (`edit_profile_page.dart`):** Form terisi otomatis (`TextEditingController`) dari data profil saat ini dengan validasi nama wajib diisi, format email valid, dan nomor HP khusus angka 10–13 digit. Data terbaru dikembalikan menggunakan `Navigator.pop(context, dataBaru)` dan langsung diperbarui dengan `setState()`.
-* **Halaman Tentang Saya (`about_page.dart`):** Menampilkan daftar keahlian/hobi serta riwayat pendidikan menggunakan `ListView`.
-* **Tema Terang & Gelap (Light / Dark Mode):** Pengaturan tema langsung di dalam aplikasi melalui ikon pada `AppBar` maupun switch pada `Drawer`.
-* **Identitas Aplikasi Android:** Nama aplikasi pada perangkat Android telah disesuaikan melalui atribut `android:label` di `AndroidManifest.xml`.
+| Tahap | Isi |
+|---|---|
+| 1 – MaterialApp | `title`, `debugShowCheckedModeBanner: false`, `theme` dan `darkTheme` Material 3, `themeMode: ThemeMode.system`, `home: ProfilePage` |
+| 2 – Scaffold dan kepala profil | `AppBar` + `actions`, `SafeArea` → `SingleChildScrollView` → `Padding` → `Column`, `CircleAvatar`, nama, NIM, dan program studi |
+| 3 – Kartu informasi | Widget reusable `InfoTile` (const, parameter `final`), Card Kontak dan Card Keahlian/Hobi, `FloatingActionButton` + `SnackBar` lewat `ScaffoldMessenger` |
 
----
+**Cara menjalankan:**
 
-## Screenshot Aplikasi (Soal 2)
-
-> *Catatan: Simpan file tangkapan layar ke dalam folder `screenshots/` sesuai nama file di bawah ini agar gambar tampil otomatis di GitHub.*
-
-| Halaman Login | Halaman Profil (Light Mode) |
-| :---: | :---: |
-| ![Halaman Login](screenshots/1_login.png) | ![Halaman Profil](screenshots/2_profil.png) |
-
-| Halaman Edit Profil | Halaman Tentang Saya & Dark Mode |
-| :---: | :---: |
-| ![Halaman Edit Profil](screenshots/3_edit_profil.png) | ![Halaman Tentang Saya](screenshots/4_tentang_saya.png) |
+```bash
+cd soal1-live-coding
+flutter pub get
+flutter run
+```
 
 ---
 
-## Cara Menjalankan Proyek
+## Soal 2 – Aplikasi Profil Mahasiswa (Android)
 
-Pastikan **Flutter SDK** sudah terpasang dan perangkat Android / Emulator sudah aktif.
+Aplikasi Flutter Android yang menampilkan profil diri, lengkap dengan login, edit profil, halaman tentang saya, dan mode gelap. Nama aplikasi di HP diatur lewat `android:label` pada `AndroidManifest.xml`.
 
-1. **Clone repository ini:**
-   ```bash
-   git clone https://github.com/TYASAP-dev/uts-pml-1124160009.git
-   cd uts-pml-1124160009
-   ```
+### Screenshot
 
-2. **Masuk ke folder proyek yang ingin dijalankan (misalnya Soal 2):**
-   ```bash
-   cd soal2-profil-app
-   ```
+| Login | Profil | Edit Profil |
+|:---:|:---:|:---:|
+| ![Login](screenshots/login.png) | ![Profil](screenshots/profil.png) | ![Edit Profil](screenshots/edit-profil.png) |
 
-3. **Unduh seluruh dependensi paket:**
-   ```bash
-   flutter pub get
-   ```
+| Tentang Saya | Drawer | Mode Gelap |
+|:---:|:---:|:---:|
+| ![Tentang Saya](screenshots/tentang.png) | ![Drawer](screenshots/drawer.png) | ![Mode Gelap](screenshots/dark-mode.png) |
 
-4. **Jalankan aplikasi di emulator atau perangkat Android:**
-   ```bash
-   flutter run
-   ```
+### Daftar Fitur
 
-5. **Untuk melakukan build file APK Release:**
-   ```bash
-   flutter build apk --release
-   ```
-   File hasil build akan tersimpan di `build/app/outputs/flutter-apk/app-release.apk`.
+- **Halaman Login**
+  - `StatefulWidget` dengan `Form` + `validator` (username wajib diisi, password minimal 6 karakter).
+  - Indikator loading dengan proses asynchronous (`Future.delayed`).
+  - Login berhasil memakai `pushReplacementNamed`, sehingga halaman login tidak bisa dikembalikan dengan tombol back.
+  - Login gagal menampilkan `SnackBar`.
+- **Halaman Profil**
+  - Foto dari `assets/images/` (terdaftar di `pubspec.yaml`) dalam `CircleAvatar`.
+  - Nama lengkap, NIM, program studi, kelas, dan bio singkat.
+  - Kontak (email, nomor HP, GitHub) dengan `Card` + `ListTile` + ikon lewat widget reusable `InfoTile`.
+- **Halaman Edit Profil**
+  - Nilai awal form dari `TextEditingController`.
+  - Validasi: nama wajib diisi, email harus valid, nomor HP hanya angka 10–13 digit.
+  - Tombol **Simpan** mengirim data baru dengan `Navigator.pop(context, dataBaru)`, lalu Halaman Profil langsung diperbarui dengan `setState()`.
+- **Halaman Tentang Saya** – keahlian/hobi dan riwayat pendidikan dengan `ListView`.
+- **Scaffold lengkap** – `AppBar` dengan aksi edit, `Drawer`, dan `BottomNavigationBar`.
+- **Tema** – `theme` (seed biru) dan `darkTheme` (seed deep purple), Material 3. Switch **Mode Gelap** di drawer mengubah `themeMode` secara langsung.
+- **Routes** – `/profile` dan `/about` terdaftar di `MaterialApp`.
+
+### Akun Login (Demo)
+
+| Username | Password |
+|---|---|
+| `adit` | `280305` |
+
+> Data hanya disimpan di memori (tanpa server/database), sehingga perubahan profil kembali ke awal saat aplikasi ditutup.
+
+### Struktur Kode
+
+```
+soal2-profil-app/soal2uts/lib/
+├── main.dart                     # MaterialApp, tema, routes, themeMode
+├── models/
+│   └── profile.dart              # class Profile
+├── screens/
+│   ├── login_page.dart           # Form login + validator + loading
+│   ├── profile_page.dart         # Halaman utama (Scaffold, drawer, bottom nav)
+│   ├── edit_profile_page.dart    # Form edit + Navigator.pop(dataBaru)
+│   └── about_page.dart           # Keahlian/hobi dan pendidikan (ListView)
+└── widgets/
+    └── info_tile.dart            # Widget reusable InfoTile
+```
+
+### Paket yang Digunakan
+
+Tidak ada paket tambahan selain `flutter` dan `cupertino_icons`.
+
+### Cara Menjalankan
+
+Prasyarat: Flutter SDK, Android SDK (termasuk NDK), serta HP Android atau emulator.
+
+```bash
+git clone https://github.com/TYASAP-dev/uts-pml-1124160009.git
+cd uts-pml-1124160009/soal2-profil-app/soal2uts
+flutter pub get
+flutter run
+```
+
+### Build APK
+
+```bash
+flutter build apk --release
+```
+
+File hasil build: `build/app/outputs/flutter-apk/app-release.apk`
+
+📦 **Unduh APK siap pakai:** [GitHub Releases – v1.0.0](https://github.com/TYASAP-dev/uts-pml-1124160009/releases/tag/v1.0.0)
+
+---
+
+## Catatan
+
+- Folder `build/`, `.dart_tool/`, dan file lokal lain tidak di-commit (memakai `.gitignore` bawaan Flutter).
+- File APK tidak di-commit ke repository, hanya diunggah ke GitHub Releases.
