@@ -4,13 +4,15 @@ Repository ini berisi hasil Ujian Tengah Semester (UTS) mata kuliah **Pemrograma
 
 ## Identitas
 
-|---|---|
+| Informasi | Keterangan |
+| :--- | :--- |
 | **Nama** | Muhammad Aditya Saputra |
 | **NIM** | 1124160009 |
 | **Program Studi** | Teknik Informatika |
 | **Kelas** | TI Semester 5 |
 | **Dosen** | I Ketut Gunawan, S.Kom., M.T |
 | **GitHub** | [TYASAP-dev](https://github.com/TYASAP-dev) |
+
 
 ## Video Presentasi
 
