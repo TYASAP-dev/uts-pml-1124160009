@@ -4,7 +4,6 @@ Repository ini berisi hasil Ujian Tengah Semester (UTS) mata kuliah **Pemrograma
 
 ## Identitas
 
-| | |
 |---|---|
 | **Nama** | Muhammad Aditya Saputra |
 | **NIM** | 1124160009 |
@@ -15,7 +14,7 @@ Repository ini berisi hasil Ujian Tengah Semester (UTS) mata kuliah **Pemrograma
 
 ## Video Presentasi
 
-▶️ **[UTS PML – Aplikasi Profil – Muhammad Aditya Saputra – 1124160009](GANTI_DENGAN_LINK_YOUTUBE)**
+▶️ **[UTS PML – Aplikasi Profil – Muhammad Aditya Saputra – 1124160009](https://youtu.be/zGHSfwbNpKw)**
 
 ## Struktur Repository
 
