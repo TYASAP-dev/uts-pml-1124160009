@@ -1,7 +1,5 @@
 # UTS Pemrograman Mobile Lanjutan – uts-pml-1124160009
 
-Repository ini berisi hasil Ujian Tengah Semester (UTS) mata kuliah **Pemrograman Mobile Lanjutan** (Flutter), Semester Ganjil TA 2026–2027.
-
 ## Identitas
 
 | Informasi | Keterangan |
