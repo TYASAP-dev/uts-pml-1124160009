@@ -62,7 +62,7 @@ Aplikasi Flutter Android yang menampilkan profil diri, lengkap dengan login, edi
 
 | Login | Profil | Edit Profil |
 |:---:|:---:|:---:|
-| ![Login](screenshots/login.png) | ![Profil](screenshots/profil.png) | ![Edit Profil](screenshots/edit-profil.png) |
+| ![Login](screenshots/Login.png) | ![Profil](screenshots/Profil.png) | ![Edit Profil](screenshots/edit-profil.png) |
 
 | Tentang Saya | Drawer | Mode Gelap |
 |:---:|:---:|:---:|
