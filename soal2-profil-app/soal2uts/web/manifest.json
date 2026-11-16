@@ -1,6 +1,6 @@
 {
-    "name": "soal2_profil_app",
-    "short_name": "soal2_profil_app",
+    "name": "soal2uts",
+    "short_name": "soal2uts",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

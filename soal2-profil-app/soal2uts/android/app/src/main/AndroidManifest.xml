@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="Profil Aditya"
+        android:label="Profil Muhammad Aditya Saputra - 112160009"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

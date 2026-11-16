@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screens/about_page.dart';
-import 'screens/edit_profile_page.dart';
 import 'screens/login_page.dart';
 import 'screens/profile_page.dart';
+import 'screens/about_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,42 +16,42 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode themeMode = ThemeMode.light;
 
-  void _handleThemeChanged(bool isDark) {
+  final navigatorKey = GlobalKey<NavigatorState>();
+
+  void changeTheme(ThemeMode mode) {
     setState(() {
-      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+      themeMode = mode;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Profil Mahasiswa',
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
+      title: 'Profil Aditya',
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.indigo,
-          brightness: Brightness.light,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
+        brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.indigo,
+          seedColor: Colors.deepPurple,
           brightness: Brightness.dark,
         ),
       ),
-      themeMode: _themeMode,
-      initialRoute: '/login',
+      themeMode: themeMode,
+      home: LoginPage(
+        onLogin: () {
+          navigatorKey.currentState!.pushReplacementNamed('/profile');
+        },
+      ),
       routes: {
-        '/login': (context) => const LoginPage(),
-        '/profile': (context) => ProfilePage(
-          isDarkMode: _themeMode == ThemeMode.dark,
-          onThemeChanged: _handleThemeChanged,
-        ),
-        '/edit-profile': (context) => const EditProfilePage(),
+        '/profile': (context) => ProfilePage(onThemeChanged: changeTheme),
         '/about': (context) => const AboutPage(),
       },
     );
